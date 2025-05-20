@@ -10,9 +10,30 @@ access:
 - schemaKey: AccessRequirements
   status: dandi:OpenAccess
 assetsSummary:
-  numberOfBytes: 0
-  numberOfFiles: 0
+  approach:
+  - name: electrophysiological approach
+    schemaKey: ApproachType
+  dataStandard:
+  - identifier: RRID:SCR_016124
+    name: Brain Imaging Data Structure (BIDS)
+    schemaKey: StandardsType
+  - identifier: RRID:SCR_015242
+    name: Neurodata Without Borders (NWB)
+    schemaKey: StandardsType
+  measurementTechnique:
+  - name: current clamp technique
+    schemaKey: MeasurementTechniqueType
+  numberOfBytes: 590259490
+  numberOfFiles: 386
+  numberOfSamples: 2
+  numberOfSubjects: 90
   schemaKey: AssetsSummary
+  species:
+  - identifier: http://purl.obolibrary.org/obo/NCBITaxon_10090
+    name: Mus musculus - House mouse
+    schemaKey: SpeciesType
+  variableMeasured:
+  - CurrentClampSeries
 citation: Albarran, Eddy (2025) Electrophysiological validation of striatal neurons
   and dopamine neurons in D1-Cre, A2a-Cre, D1-FlpO, A2a-FlpO, DAT-FlpO transgenic
   mice (Version draft) [Data set]. DANDI Archive. https://dandiarchive.org/dandiset/001452/draft
