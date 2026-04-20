@@ -1,0 +1,54 @@
+[
+  {
+    "identifier": "DandisetAlreadyBIDS",
+    "title": "Dandiset is already BIDS",
+    "reason": "Dandiset is already organized to the BIDS standard. If only a partial conversion is desired, please raise an issue on https://github.com/con/nwb2bids/issues/new to discuss the use case.",
+    "solution": "Skip the conversion of this Dandiset.",
+    "examples": null,
+    "field": null,
+    "data_standards": null,
+    "source_file_paths": null,
+    "target_file_paths": null,
+    "category": "INTERNAL_ERROR",
+    "severity": "ERROR"
+  },
+  {
+    "identifier": "MetadataExtractionFailure",
+    "title": "Failed to extract metadata for one or more sessions",
+    "reason": "Required dataset description fields are inferred from the raw metadata instead.\n\nTraceback (most recent call last):\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/bids_models/_bids_session_metadata.py\", line 191, in _stream_nwb\n    h5py_file = h5py.File(name=rem_file, mode=\"r\")\n  File \"/data/dandi/s3-logs/conda/envs/bids_dandisets/lib/python3.13/site-packages/h5py/_hl/files.py\", line 564, in __init__\n    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)\n  File \"/data/dandi/s3-logs/conda/envs/bids_dandisets/lib/python3.13/site-packages/h5py/_hl/files.py\", line 238, in make_fid\n    fid = h5f.open(name, flags, fapl=fapl)\n  File \"h5py/_objects.pyx\", line 56, in h5py._objects.with_phil.wrapper\n  File \"h5py/_objects.pyx\", line 57, in h5py._objects.with_phil.wrapper\n  File \"h5py/h5f.pyx\", line 102, in h5py.h5f.open\nOSError: Unable to synchronously open file (file signature not found)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/_converters/_dataset_converter.py\", line 211, in extract_metadata\n    collections.deque(\n    ~~~~~~~~~~~~~~~~~^\n        (\n        ^\n    ...<8 lines>...\n        maxlen=0,\n        ^^^^^^^^^\n    )\n    ^\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/_converters/_dataset_converter.py\", line 213, in <genexpr>\n    session_converter.extract_metadata()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/_converters/_session_converter.py\", line 123, in extract_metadata\n    self.session_metadata = BidsSessionMetadata.from_nwbfile_paths(\n                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        nwbfile_paths=self.nwbfile_paths, run_config=self.run_config\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/data/dandi/s3-logs/conda/envs/bids_dandisets/lib/python3.13/site-packages/pydantic/_internal/_validate_call.py\", line 39, in wrapper_function\n    return wrapper(*args, **kwargs)\n  File \"/data/dandi/s3-logs/conda/envs/bids_dandisets/lib/python3.13/site-packages/pydantic/_internal/_validate_call.py\", line 136, in __call__\n    res = self.__pydantic_validator__.validate_python(pydantic_core.ArgsKwargs(args, kwargs))\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/bids_models/_bids_session_metadata.py\", line 133, in from_nwbfile_paths\n    nwbfiles = [_stream_nwb(url=url) for url in typing.cast(list[pydantic.HttpUrl], nwbfile_paths)]\n                ~~~~~~~~~~~^^^^^^^^^\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/bids_models/_bids_session_metadata.py\", line 198, in _stream_nwb\n    raise ValueError(message)\nValueError: \nFailed to open NWB file from URL https://dandiarchive.s3.amazonaws.com/blobs/6a0/35b/6a035b51-6f81-4dd6-bbe5-8ce90bacdb5f: Unable to synchronously open file (file signature not found)\n\nPossible that backend is not supported.\nPlease raise an issue on https://github.com/con/nwb2bids/issues/new to discuss.\n",
+    "solution": "Please raise an issue on `nwb2bids`: https://github.com/con/nwb2bids/issues.",
+    "examples": null,
+    "field": null,
+    "data_standards": null,
+    "source_file_paths": null,
+    "target_file_paths": null,
+    "category": "INTERNAL_ERROR",
+    "severity": "ERROR"
+  },
+  {
+    "identifier": "MetadataExtractionFailure",
+    "title": "Failed to extract metadata for one or more sessions",
+    "reason": "Required dataset description fields are inferred from the raw metadata instead.\n\nTraceback (most recent call last):\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/bids_models/_bids_session_metadata.py\", line 191, in _stream_nwb\n    h5py_file = h5py.File(name=rem_file, mode=\"r\")\n  File \"/data/dandi/s3-logs/conda/envs/bids_dandisets/lib/python3.13/site-packages/h5py/_hl/files.py\", line 564, in __init__\n    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)\n  File \"/data/dandi/s3-logs/conda/envs/bids_dandisets/lib/python3.13/site-packages/h5py/_hl/files.py\", line 238, in make_fid\n    fid = h5f.open(name, flags, fapl=fapl)\n  File \"h5py/_objects.pyx\", line 56, in h5py._objects.with_phil.wrapper\n  File \"h5py/_objects.pyx\", line 57, in h5py._objects.with_phil.wrapper\n  File \"h5py/h5f.pyx\", line 102, in h5py.h5f.open\nOSError: Unable to synchronously open file (file signature not found)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/_converters/_dataset_converter.py\", line 211, in extract_metadata\n    collections.deque(\n    ~~~~~~~~~~~~~~~~~^\n        (\n        ^\n    ...<8 lines>...\n        maxlen=0,\n        ^^^^^^^^^\n    )\n    ^\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/_converters/_dataset_converter.py\", line 213, in <genexpr>\n    session_converter.extract_metadata()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/_converters/_session_converter.py\", line 123, in extract_metadata\n    self.session_metadata = BidsSessionMetadata.from_nwbfile_paths(\n                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        nwbfile_paths=self.nwbfile_paths, run_config=self.run_config\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/data/dandi/s3-logs/conda/envs/bids_dandisets/lib/python3.13/site-packages/pydantic/_internal/_validate_call.py\", line 39, in wrapper_function\n    return wrapper(*args, **kwargs)\n  File \"/data/dandi/s3-logs/conda/envs/bids_dandisets/lib/python3.13/site-packages/pydantic/_internal/_validate_call.py\", line 136, in __call__\n    res = self.__pydantic_validator__.validate_python(pydantic_core.ArgsKwargs(args, kwargs))\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/bids_models/_bids_session_metadata.py\", line 133, in from_nwbfile_paths\n    nwbfiles = [_stream_nwb(url=url) for url in typing.cast(list[pydantic.HttpUrl], nwbfile_paths)]\n                ~~~~~~~~~~~^^^^^^^^^\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/bids_models/_bids_session_metadata.py\", line 198, in _stream_nwb\n    raise ValueError(message)\nValueError: \nFailed to open NWB file from URL https://dandiarchive.s3.amazonaws.com/blobs/6a0/35b/6a035b51-6f81-4dd6-bbe5-8ce90bacdb5f: Unable to synchronously open file (file signature not found)\n\nPossible that backend is not supported.\nPlease raise an issue on https://github.com/con/nwb2bids/issues/new to discuss.\n",
+    "solution": "Please raise an issue on `nwb2bids`: https://github.com/con/nwb2bids/issues.",
+    "examples": null,
+    "field": null,
+    "data_standards": null,
+    "source_file_paths": null,
+    "target_file_paths": null,
+    "category": "INTERNAL_ERROR",
+    "severity": "ERROR"
+  },
+  {
+    "identifier": "LocalInitializationFailure",
+    "title": "Failed to initialize converter on local NWB files.",
+    "reason": "An error occurred while executing `DatasetConverter.from_nwb_paths`.\n\nTraceback (most recent call last):\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/_converters/_dataset_converter.py\", line 284, in convert_to_bids_dataset\n    self._set_use_session_labels()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/data/dandi/bids-dandisets/nwb2bids/src/nwb2bids/_converters/_dataset_converter.py\", line 248, in _set_use_session_labels\n    participant_id = session_converter.session_metadata.sanitization.sanitized_participant_id\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'sanitization'\n",
+    "solution": "Please raise an issue on `nwb2bids`: https://github.com/con/nwb2bids/issues.",
+    "examples": null,
+    "field": null,
+    "data_standards": null,
+    "source_file_paths": null,
+    "target_file_paths": null,
+    "category": "INTERNAL_ERROR",
+    "severity": "ERROR"
+  }
+]
